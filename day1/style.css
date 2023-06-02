@@ -1,0 +1,26 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+.container{
+    width: 80%;
+    border: 1px solid;
+    margin: 2rem 0rem;
+    background-color: lightgray;
+    & #details{
+        text-align: center;
+        margin: 1rem;
+        & h1{
+            background-color: rgb(173, 22, 22);
+            color: white;
+            display: inline;
+        }
+        & img{
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
