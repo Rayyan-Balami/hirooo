@@ -5,21 +5,20 @@ body{
     padding-top: 5rem;
 }
 .container{
-    width: 80%;
+    width: 70%;
     border: 1px solid;
-    margin: 2rem 0rem;
     background-color: lightgray;
+    padding: 3rem;
     & #details{
         text-align: center;
         margin: 1rem;
-        & h1{
+        & h1    {
             background-color: rgb(173, 22, 22);
             color: white;
             display: inline;
         }
         & img{
-            text-align: center;
-            display: block;
+            border:4px solid brown;
         }
     }
 }
