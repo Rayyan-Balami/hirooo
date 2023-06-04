@@ -22,4 +22,19 @@ body{
         }
     }
 }
+.contact{
+    border: 4px solid brown;
+    background-color: rgb(106, 126, 106);
+}
 
+table,th,td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+th{
+    background-color: #4CAF50;
+    padding: 1rem 0rem;
+}
