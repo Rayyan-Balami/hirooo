@@ -1,0 +1,68 @@
+ @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+ body {
+     font-family: 'Ubuntu', sans-serif;
+ }
+
+ .container {
+     background-color: rgb(216, 230, 230);
+     margin: 20px 20px;
+     padding: 10px 10px;
+     border: 1px solid grey;
+ }
+
+ header {
+     text-align: center;
+ }
+
+ h1 {
+     background-color: rgb(121, 8, 8);
+     color: white;
+     width: fit-content;
+     margin: 10px auto;
+ }
+
+ header img {
+     border: 3px solid rgb(121, 8, 8);
+     border-radius: 5px;
+ }
+
+ .underline{
+    text-decoration:underline ;
+ }
+ .bold{
+    font-weight: bold;
+ }
+ .slicetext{
+    text-decoration: line-through;
+ }
+ .italic{
+    font-style: italic;
+ }
+
+ .personal-info div {
+    background-color: rgb(170, 196, 174);
+    padding : 10px 6px;
+    border: 3px solid rgb(121, 8, 8);
+ }
+table{
+    border-collapse: collapse;
+    
+}
+th,td{
+    
+    border: 1px solid gray;
+    padding: 6px;
+}
+tbody tr:nth-child(even){
+    background-color: rgb(235, 214, 214);
+
+}
+ .experience table thead{
+    background-color: rgb(123, 173, 49);
+    line-height: 3rem;
+ }
+ .quote{
+    margin-top: 5px;
+    border-top: 1px solid gray;
+ }
