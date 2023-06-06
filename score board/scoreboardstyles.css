@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-image: radial-gradient(circle, #5b88f0, #00a7fe, #00bfef, #00d1cf, #4bdea9, #8fdb82, #c5d466, #f5c85f, #ffaa64, #ff8a83, #ff73b2, #ff73e7);
+}
+h1{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 1em 0;
+}
+.container{
+    margin: 2em;
+    height: 100vh;
+}
+.matches{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.match1{
+    background-color: whitesmoke;
+    padding: 1em 2em;
+    width: fit-content;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.match1 .team-A{
+display: flow-root;
+margin-bottom: 1em;
+}
+
+.match1 .team-A .name{
+    float: left;
+    font-size: 5rem;
+}
+.match1 .team-A .score{
+    background-color: #e93c3c;
+    float: right;
+    font-size: 5rem;
+    margin-left: 1em;
+
+
+}
+.match1.team-B{
+    clear: both;
+    display: flex;
+    margin: 1em 0;
+}
+.match1 .team-B .name{
+    float: left;
+    font-size: 5rem;
+}
+.match1 .team-B .score{
+    background-color: #5098eb;
+    float: right;
+    font-size: 5rem;
+    margin-left: 1em;
+}
+.match2{
+    clear: both;
+    background-color: whitesmoke;
+    padding: 1em 2em;
+    width: fit-content;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.match2 .team-A{
+    display: flow-root;
+margin-bottom: 1em;
+
+}
+.match2 .team-A .name{
+    float: left;
+    font-size: 5rem;
+}
+.match2 .team-A .score{
+    background-color: #e93c3c;
+    float: right;
+    font-size: 5rem;
+    margin-left: 1em;
+
+}
+.match2.team-B{
+    clear: both;
+    display: flex;
+}
+.match2 .team-B .name{
+    float: left;
+    font-size: 5rem;
+}
+.match2 .team-B .name h3{
+    text-overflow: clip;
+    overflow: hidden;
+}
+.match2 .team-B .score{
+    background-color: #5098eb;
+    float: right;
+    font-size: 5rem;
+    margin-left: 1em;
+
+}
+.name {
+    width: 5.5em; /* Adjust the width as per your requirement */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
