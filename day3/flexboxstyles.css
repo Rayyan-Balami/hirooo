@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    background-color: aqua;
+    text-align: center;
+}
+header h1{
+    margin: 0; 
+}
+main{
+    background-color: bisque;
+}
+
+.intro{
+    height: 60%;
+    background-color: aquamarine;
+}
+.my-skills{
+    height: 60%;
+    background-color: rgb(208, 255, 127);
+    text-align: ;
+}
+.my-skills .columns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+}
+.my-skills .columns .column{
+    width: 10rem;
+    text-align: justify;
+    
+}
