@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+
+        .container {
+            width: 80vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid;
+            margin-top: 150vh;
+
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid;
+        }
+
+        .box1 {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .box3 {
+            position: sticky;
+            top: 100%;
+        }
+
+        .box4 {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            transition: background 1s ease-in-out;
+            animation: linear infinite rotates 1s;
+        }
+        @keyframes rotates {
+            0%,100% {
+                rotate: 45deg;
+            }
+            50%{
+                rotate: 0deg;
+            }
+
+            
+        }
+        .box4:hover{
+            background-color: blue;
+            rotate: 45deg;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+
+</body>
+
+</html>
