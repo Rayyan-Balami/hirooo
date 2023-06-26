@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+body{
+  font-family: "Poppins";
+    width: 100vw;
+    min-height: 100vh;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 5px 20px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.website-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.samriddhi img{
+  width: 96px;
+  margin-right: 10px;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a{
+  margin: 0 10px;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 7px;
+  text-align: center;
+  display: block;
+}
+nav a:hover{
+  background-color: #f87c00;
+  color: #fff;
+}
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+}
+main{
+  height: 100vw;
+}
+footer{
+ background-color: #f87c00;
+ padding: 20px;
+ color: #fff;
+}
+footer h2{
+  font-size: 2rem;
+  margin: 10px 0;
+}
+footer img{
+  width: 15em;
+  background-color: #fff;
+
+}
+footer #contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer #contact div{
+  margin: 10px;
+}
+footer #contact div a{
+  text-decoration: underline;
+}
+footer #contact ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer #contact ul h5{
+  font-size: 1.5rem;
+}
+footer #developers{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer #developers h2{
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+footer #developers img{
+  width: 48px;
+  margin-right: 10px;
+}
+
+
+footer #developers ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer #developers ul li{
+  margin: 10px;
+}
+
+
