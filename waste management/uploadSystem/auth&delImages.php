@@ -11,8 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $image_path = $_POST['image_path'];
 
     // Insert the data into the authImages table
-    $sql_query = "INSERT INTO authImages (username, class, section, title, description, image_path) VALUES ('$username', '$class', '$section', '$title', '$description', '$image_path')";
-    $result = mysqli_query($conn, $sql_query);
+     $sql_query = "INSERT INTO authImages (username, class, section, title, description, image_path) VALUES ('', '', '', ?, ?, ?)";
+     $stmt = mysqli_prepare($conn, $sql_query);
+     mysqli_stmt_bind_param($stmt, 'sss', $title, $description, $image_path);
+     $result = mysqli_stmt_execute($stmt);
 
     // If the insertion was successful, delete the row from the images table
     if ($result) {

@@ -22,6 +22,7 @@ header{
   background: #fff;
   padding: 5px 20px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  z-index: 1000;
 }
 .website-name{
   display: flex;
@@ -54,11 +55,57 @@ nav ul{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  align-items: center;
 }
+
 main{
-  height: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 10px 0;
 }
+main .box{
+    min-width: 300px;
+    max-width: 330px;
+    height: 300px;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+main .box:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+main .box .image{
+    width: 100%;
+    height: 80%;
+}
+
+main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.box .title {
+    margin-top: 10px;
+    height: 20%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Adjust the number of lines before the ellipsis appears */
+}
+
+
+
+
+
+
 footer{
  background-color: #f87c00;
  padding: 20px;
@@ -118,6 +165,88 @@ footer #developers ul{
 }
 footer #developers ul li{
   margin: 10px;
+}
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.nav-links.open {
+    max-height: 500px;
+    transition: max-height 1s ease-in-out;
+}
+
+@media screen and (min-width: 1200px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    .nav-links {
+        position: static;
+        max-height: none;
+        background-color: transparent;
+
+    }
+
+    .nav-links li {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 555px){
+    header{
+        padding: 5px 5px;
+    }
+    .website-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .samriddhi img{
+        width: 64px;
+      }
+      h1{
+        font-size: 1.5rem;
+      }
+}
+@media screen and (max-width: 376px){
+    h1{
+      font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 321px){
+      h1{
+        font-size: 1rem;
+      }
 }
 
 

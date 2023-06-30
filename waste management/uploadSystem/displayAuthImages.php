@@ -1,7 +1,7 @@
 <?php
 include('connect.php');
 
-$sql_query = "SELECT * FROM images";
+$sql_query = "SELECT * FROM authImages";
 $result = mysqli_query($conn, $sql_query);
 
 ?>
@@ -28,7 +28,7 @@ $result = mysqli_query($conn, $sql_query);
 </head>
 
 <body>
-    <h1>Image Authentication</h1>
+    <h1>Authenticated Images ( showing in website )</h1>
     <table>
         <tr>
             <th>User</th>
@@ -52,19 +52,9 @@ $result = mysqli_query($conn, $sql_query);
                 <td><?php echo $description; ?></td>
                 <td><img src="<?php echo $image_path; ?>" alt="image" width="100"></td>
                 <td>
-                    <form action="auth&delImages.php" method="post">
+                    <form action="delAuthImages.php" method="post">
                         <input type="hidden" name="image_id" value="<?php echo $row['id']; ?>">
-                        <input type="hidden" name="username" value="<?php echo $username; ?>">
-                        <input type="hidden" name="class" value="<?php echo $class; ?>">
-                        <input type="hidden" name="section" value="<?php echo $section; ?>">
-                        <input type="hidden" name="title" value="<?php echo $title; ?>">
-                        <input type="hidden" name="description" value="<?php echo $description; ?>">
-                        <input type="hidden" name="image_path" value="<?php echo $image_path; ?>">
-                        <button type="submit">Approve & publish</button>
-                    </form>
-                    <form action="delImages.php" method="post">
-                        <input type="hidden" name="image_id" value="<?php echo $row['id']; ?>">
-                        <button type="submit">Disapprove & Delete</button>
+                        <button type="submit">Unpublish & Delete</button>
                     </form>
                 </td>
             </tr>

@@ -1,3 +1,13 @@
+<?php
+include('connect.php');
+$sql_query = "SELECT * FROM authImages";
+$result = mysqli_query($conn, $sql_query);
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +15,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waste Management</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css?v=1" />
 </head>
 
 <body>
@@ -19,16 +29,52 @@
             </a>
         </div>
         <nav>
-            <ul>
-                <li><a href="auth_displayImages.php">Photos</a></li>
-                <li><a href="#">Videos</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
-        </nav>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="auth_displayImages.php">Photos</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
     </header>
-    <main></main>
+    <main>
+    <?php
+      $rows = array();
+      while ($row = mysqli_fetch_assoc($result)) {
+          $rows[] = $row;
+      }
+      
+      // Traverse the array in reverse order
+      for ($i = count($rows) - 1; $i >= 0; $i--) {
+          $row = $rows[$i];
+      
+          $username = $row['username'];
+          $class = $row['class'];
+          $section = $row['section'];
+          $title = $row['title'];
+          $description = $row['description'];
+          $image_path = $row['image_path'];
+          ?>
+            <div class="box">
+                <section class="image">
+                <img src="../uploadSystem/<?php echo $image_path; ?>" alt="image">
+                </section>
+                <section class="title">
+                    <?php echo $title; ?>
+                </section>
+            </div>
+
+
+            <?php
+        }
+        ?>
+    </main>
     <footer>
         <h2>About Us</h2>
         <div id="about">
@@ -79,12 +125,12 @@
                                 <b><span class="bullet">&#8226;</span> Secondary Wing:</b><br />
                                 Tel:
                                 <a href="tel:014983777">01-4983777</a>,
-                                <a href="tel:014984777">4984777</a><br/>
+                                <a href="tel:014984777">4984777</a><br />
 
-                                <b><span class="bullet">&#8226;</span> Pre-School Wing:</b><br/>
+                                <b><span class="bullet">&#8226;</span> Pre-School Wing:</b><br />
                                 Tel:
                                 <a href="tel:014970590">01-4970590</a>,
-                                <a href="tel:014970591" style="font-size: 14px; text-decoration: none">4970591</a><br/>
+                                <a href="tel:014970591">4970591</a><br />
 
                                 Email:
                                 <a href="mailto:info@samriddhischool.edu.np">info@samriddhischool.edu.np</a>
@@ -109,7 +155,8 @@
             </ul>
         </div>
         <div id="developers">
-            <a href="https://kbcampus.edu.np"><img src="Kathmandu-Business-Campus.jpg" alt="Kathmandu-Business-Campus"></a><span> ( Owned & Managed by Samriddhi School )</span>
+            <a href="https://kbcampus.edu.np"><img src="Kathmandu-Business-Campus.jpg"
+                    alt="Kathmandu-Business-Campus"></a><span> ( Owned & Managed by Samriddhi School )</span>
             <h2>Developers <span> BCA 3rd SEM Students</span></h2>
             <ul>
                 <li>Rayyan</li>
@@ -119,9 +166,18 @@
                 <li>Saiyam</li>
                 <li>Riyaz</li>
             </ul>
-            <p>© 2021 Samriddhi School, Binayak Basti, Balaju, Kathmandu | Tel: Primary Wing - 01-4970590/ 4970591, Secondary Wing - 01-4983777/ 4984777</p>
+            <p>© 2021 Samriddhi School, Binayak Basti, Balaju, Kathmandu | Tel: Primary Wing - 01-4970590/ 4970591,
+                Secondary Wing - 01-4983777/ 4984777</p>
         </div>
     </footer>
 </body>
+<script>
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
 
+    hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+</script>
 </html>
